@@ -38,14 +38,10 @@ desc tbFuncionario;
 desc tbUsuario;
 
 -- incerindo valores na tabelas
-insert into tbFuncionario(nome,email,cpf,tel)
-values('João Otavio','joao@gmail.com','28542968473','955287168');
-insert into tbFuncionario(nome,email,cpf,tel)
-values('Lucas Calvo','lucas@gmail.com','63846209348','993482588');
-insert into tbUsuario(nome,senha)
-values('João Otavio','aaaaaaaa');
-insert into tbUsuario(nome,senha)
-values('Lucas Calvo','aaaaaaaa');
+insert into tbFuncionario(nome,email,cpf,tel)values('João Otavio','joao@gmail.com','28542968473','955287168');
+insert into tbFuncionario(nome,email,cpf,tel)values('Lucas Calvo','lucas@gmail.com','63846209348','993482588');
+insert into tbUsuario(nome,senha)values('João Otavio','aaaaaaaa');
+insert into tbUsuario(nome,senha)values('Lucas Calvo','aaaaaaaa');
 
 -- visualizando o registro da tabela 
 select * from tbFuncionario;
