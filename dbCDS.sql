@@ -53,3 +53,4 @@ primary key(cod_cli),
 foreign key(cod_cid) references tbCidade(cod_cid)
 );
 
+-- Pg. 69
