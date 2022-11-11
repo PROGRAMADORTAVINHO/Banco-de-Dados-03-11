@@ -52,20 +52,13 @@ insert into tbFuncionarios(nome,email,cpf,tel)
 values('Maria da Silva','maria.silva@hotmail.com','254.258.963-77','98741-5824');
 
 insert into tbUsuarios(nome,senha)values('maria.silva','123456');
-
 insert into tbUsuarios(nome,senha)values('jose.cunha','654321');
 
-
 insert into tbProdutos(descricao,preco,validade,quantidade,tipo)values('Banana',20.50,'2022-11-07',12,'duzia');
-
 insert into tbProdutos(descricao,preco,validade,quantidade,tipo)values('Banana',25.50,'2022-11-10',15,'duzia');
-
 insert into tbProdutos(descricao,preco,validade,quantidade,tipo)values('Banana',10.50,'2022-11-11',08,'duzia');
-
 insert into tbProdutos(descricao,preco,validade,quantidade,tipo)values('Banana',12.50,'2022-11-09',05,'duzia');
-
 insert into tbProdutos(descricao,preco,validade,quantidade,tipo)values('Melancia',30.00,'2022-11-30',1,'unidade');
-
 insert into tbProdutos(descricao,preco,validade,quantidade,tipo)values('Morango',10.50,'2022-11-08',1,'caixa');
 
 -- visualizando os registros das tabelas
@@ -105,5 +98,8 @@ select * from tbProdutos where descricao like '%m';
 select * from tbProdutos where descricao like '%m%';
 
 update tbProdutos set preco = preco * 1.10 where preco > 11.00;
-
 update tbProdutos set preco = preco * 0.90 where preco > 11.00;
+
+-- Limit
+select * from PRODUTOS limit 5;
+select * from PRODUTOS order by valor desc limit 5;
