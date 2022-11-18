@@ -46,9 +46,9 @@ create table tbCliente(
 cod_cli int not null auto_increment,
 nome_cli varchar(50) not null,
 end_cli varchar(100) not null,
-renda_cli decimal(9,2) not null default 0 check(renda_cli >= 0)
+renda_cli decimal(9,2) not null default 0 check(renda_cli >= 0),
 sexo_cli char(1) not null default 'F' check(sexo_cli in('F','M')),
-cod_cid int not null
+cod_cid int not null,
 primary key(cod_cli),
 foreign key(cod_cid) references tbCidade(cod_cid)
 );
@@ -56,10 +56,10 @@ foreign key(cod_cid) references tbCidade(cod_cid)
 create table tbConjuge(
 cod_conj int not null auto_increment,
 nome_conj varchar(50) not null,
-renda_conj decimal(9,2) not null default 0 check(renda_cli >= 0),
-sexo_conj char(1) not null default 'F' check(sexo_cli in('F','M')),
+renda_conj decimal(9,2) not null default 0 check(renda_conj >= 0),
+sexo_conj char(1) not null default 'F' check(sexo_conj in('F','M')),
 cod_cli int not null,
-primary key(cod_conj)
+primary key(cod_conj),
 foreign key(cod_cli) references tbCliente(cod_cli)
 );
 
@@ -68,14 +68,14 @@ cod_func int not null auto_increment,
 nome_func varchar(50) not null,
 end_func varchar(100) not null,
 sal_func decimal(9,2) not null default 0 check(sal_func >=0 ),
-sexo_func char(1) not null default 'F' check(sexo_cli in('F','M')),
+sexo_func char(1) not null default 'F' check(sexo_func in('F','M')),
 primary key(cod_func)
 );
 
 create table tbDepedentes(
 cod_dep int not null auto_increment,
 nome_dep varchar(100) not null,
-sexo_dep char(1) not null default 'F' check(sexo_cli in('F','M')),
+sexo_dep char(1) not null default 'F' check(sexo_dep in('F','M')),
 cod_func int not null,
 primary key(cod_dep),
 foreign key(cod_func) references tbFuncionario(cod_func)
@@ -104,4 +104,22 @@ foreign key(cod_cli) references tbCliente(cod_cli),
 foreign key(cod_func) references tbFuncionario(cod_func)
 );
 
--- Pg. 72
+create table tbTitulo_Pedido(
+qtd_CD int not null default 0 check(qtd_CD >= 1),
+val_CD decimal(9,2) not null default 0 check(val_CD > 0),
+num_ped int not null,
+cod_tit int not null,
+foreign key(num_ped) references tbPedidos(num_ped),
+foreign key(cod_tit) references tbTitulo(cod_tit)
+);
+
+create table tbTitulo_Artista(
+cod_tit int not null,
+cod_art int not null,
+foreign key(cod_tit) references tbTitulo(cod_tit),
+foreign key(cod_art) references tbArtista(cod_art)
+);
+show tables;
+
+
+-- Pg. 73

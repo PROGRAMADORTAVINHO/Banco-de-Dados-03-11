@@ -1,0 +1,12 @@
+git init
+git add .
+git commit -m "criando banco de dados loja"
+git config --global user.name"tavinho"
+git config --global user.email"jotavio250@gmail.com"
+git remote add origin link do repositorio
+git push -u origin master
+
+Atualizar
+git add .
+git commit -m "criando banco de dado"
+git push -u origin master
