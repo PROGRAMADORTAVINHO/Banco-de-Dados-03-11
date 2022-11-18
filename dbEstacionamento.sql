@@ -31,6 +31,7 @@ insert into tbCarros(placa, cor, modelo, ano, data_entrada, hora_entrada, data_s
 insert into tbCarros(placa, cor, modelo, ano, data_entrada, hora_entrada, data_saida, hora_saida) values ('GFX-7199', 'Laranja', 'Mustang', '2022' , '2022/01/01', '00:00:00', '2022/01/02', '00:00:10');
 
 select * from tbCarros;
+
 -- Altera 5 registro
 update tbCarros set cor = 'verde' where codcarro = 5;
 update tbCarros set placa = 'FTK-7585' where codcarro = 2;
