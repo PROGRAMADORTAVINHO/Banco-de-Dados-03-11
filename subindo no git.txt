@@ -8,5 +8,5 @@ git push -u origin master
 
 Atualizar
 git add .
-git commit -m "criando banco de dado"
+git commit -m "atualização"
 git push -u origin master
